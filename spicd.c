@@ -376,8 +376,14 @@ static void usage(void) {
 	fprintf(stderr, "Usage: spicd [OPTIONS]...\n\n");
 	fprintf(stderr, "Commands:\n");
 	fprintf(stderr, "\t-d, --debug\t\t\tdebug mode\n");
+	fprintf(stderr, "\n");
 	fprintf(stderr, "\t-D, --dc-brightness=NUM\t\tLCD brightness value without AC adaptor (from 0..255, default: %d)\n", SONYPI_DEFAULT_DC_BN);
 	fprintf(stderr, "\t-A, --ac-brightness=NUM\t\tLCD brightness value with AC adaptor (default: %d)\n", SONYPI_DEFAULT_AC_BN);
+	fprintf(stderr, "\n");
+	fprintf(stderr, "\t-C, --disable-cpufreq\t\tdisable CPU frequency support\n");
+	fprintf(stderr, "\t-m, --dc-frequency=NUM\t\tCPU frequency without AC adaptor\n");
+	fprintf(stderr, "\t-M, --ac-frequency=NUM\t\tCPU frequency with AC adaptor\n");
+	fprintf(stderr, "\n");
 	fprintf(stderr, "\t-V, --version\t\t\tprint version information\n");
 	fprintf(stderr, "\t-?, --help\t\t\tprint this usage\n");
 
