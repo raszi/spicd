@@ -1,6 +1,6 @@
-* second release	(Mon Nov  4 00:03:45 CET 2002)
+* release 0.2		(Mon Nov  4 00:03:45 CET 2002)
 	- cpufreq is now supported
 	- better error handling
 
-* first release		(Sun Nov  3 10:21:49 CET 2002)
+* release 0.1		(Sun Nov  3 10:21:49 CET 2002)
 	- only LCD backlight support
