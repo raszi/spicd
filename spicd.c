@@ -62,7 +62,7 @@ static void version(void);
 static void error(char *str, int doexit);
 
 static void sig_handler(int sig) {
-    syslog(LOG_INFO, "Exiting");
+    syslog(LOG_INFO, "exiting");
     unlink(PID_FILE);
     exit(0);
 }
@@ -86,6 +86,8 @@ int main(int argc, char **argv) {
 
 	unsigned int dc_freq = minimal_frequency;
 	unsigned int ac_freq = maximal_frequency;
+
+	int disable_cpufreq = 0;
 
 	FILE *str;
 
@@ -122,7 +124,7 @@ int main(int argc, char **argv) {
 				ac_freq = strtoul(optarg, NULL, 10);
 				break;
 			case 'C':
-				cpufreq = 0;
+				disable_cpufreq = 1;
 				break;
 			case '?':
 			default:
@@ -228,8 +230,10 @@ int main(int argc, char **argv) {
 
 	if ((cpufreq = cpufreq_open()) < 0) {
 		if (debug) syslog(LOG_INFO, "cpufreq does not suppported");
-	} else {
+	} else if (!disable_cpufreq) {
 		cpufreq_fd = cpufreq;
+	} else if (debug) {
+		syslog(LOG_INFO, "cpufreq support present, but disabled");
 	}
 
 	if ((fd = sonypi_open()) < 0) {
