@@ -1,0 +1,6 @@
+spicd uses the sonypi interface provided by /dev/sonypi and the linux
+kernel. Build your kernel with CONFIG_SONYPI set to make the program work.
+
+if you want cpufreq support you must download the patch from
+http://cvs.arm.linux.org.uk/ or the daily snapshot from:
+ftp://ftp.linux.org.uk/pub/linux/cpufreq/.

@@ -1,0 +1,31 @@
+.TH SPICD 1 "1 November 2002"
+.SH NAME
+SPICD \- Sony Vaio SPIC control daemon
+.SH SYNOPSIS
+.B spicd [OPTION]...
+.SH DESCRIPTION
+.PP
+.B spicd
+is a utility that can use the Sony Programmable I/O Control
+device (SPIC), which is part of Sony Vaio's, to do a simple AC/DC profile.
+.SH OPTIONS
+.TP
+.B \-d, --debug
+Debug mode.
+.TP
+.B \-D, --dc-brightness=NUM
+LCD brightness value if AC adaptor is plugged off.
+.TP
+.B \-A, --ac-brightness=NUM
+LCD brightness value if AC adaptor is plugged on.
+.TP
+.B \-V, --version
+Print version information.
+.SH FILES
+.TP 
+.B /dev/sonypi
+sonypi interface device file. You must be able to write to the file to use
+this program.
+.SH AUTHOR
+This man page was written by Joey Hess <joey@kitenet.net>, and modified by
+KARASZI Istvan <spicd@spam.raszi.hu>.
