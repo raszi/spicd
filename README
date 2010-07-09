@@ -1,0 +1,6 @@
+SPICD is a utility that can use the Sony Programmable I/O Control device
+(SPIC), which is part of Sony Vaio's, to do a simple AC/DC profile.
+
+This is an old repository which I created for my Sony VAIO laptop, but since I
+don't have it the development has been suspended. If somebody wants to modify
+it feel free to fork on github.
